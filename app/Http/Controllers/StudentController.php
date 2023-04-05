@@ -36,7 +36,7 @@ class StudentController extends ParentController
           'image'=> $request->image->store('public'),
         ]);
 
-        return back();
+        return redirect()->route('studentList');
     }
 
 
@@ -80,7 +80,7 @@ class StudentController extends ParentController
     public function update(Request $request,$student_id)
     {
         StudentFacade::update($request->all (),$student_id);
-        return back();
+        return reload();
 
     }
 
